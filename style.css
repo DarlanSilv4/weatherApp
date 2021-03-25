@@ -64,7 +64,14 @@ body {
   margin: 5% 25% 0 25%;
   padding-left: 20px;
   padding-right: 20px;
-  width: 50vw;
+  width: 50%;
+}
+
+@media (max-width: 479px) {
+  .search-city {
+    margin: 5% 10% 0 10%;
+    width: 80%;
+  }
 }
 
 /*
@@ -85,6 +92,7 @@ main {
 
 header {
   display: flex;
+  width: 205px;
 }
 
 header .city-name {
