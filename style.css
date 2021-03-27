@@ -92,7 +92,9 @@ main {
 
 header {
   display: flex;
-  width: 205px;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 header .city-name {
