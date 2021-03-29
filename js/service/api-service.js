@@ -7,6 +7,14 @@ const searchCity = (cityName) => {
         });
 }
 
+const getWeather = (cityKey) => {
+    return fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${cityKey}?apikey=${API_KEY}`)
+        .then(response => {
+            return response.json();
+        });
+}
+
 export const apiService = {
-    searchCity
+    searchCity,
+    getWeather
 }
