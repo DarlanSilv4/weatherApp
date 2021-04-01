@@ -72,11 +72,12 @@ const setWeather = (weather) => {
         const iconKey = forecast.Day.Icon;
         const icon = util.weatherIcons[iconKey];
         const phrase = forecast.Day.IconPhrase;
+        const shortPhrase = util.shortenerPhrase(phrase);
 
         const currentWeather = document.createElement('div');
         currentWeather.classList.add('current-weather');
         currentWeather.innerHTML = `<div class="weather-icon">${icon}</div>
-                                    <div class="weather-condition">${phrase}</div>`;
+                                    <div class="weather-condition">${shortPhrase}</div>`;
 
         const card = document.createElement('li');
         card.classList.add('weather-card');

@@ -8,6 +8,25 @@ const daysOfTheWeek = {
     6: "Saturday"
 }
 
+const shortenerPhrase = (phrase) => {
+    const notFound = -1;
+
+    if (phrase.search('Intermittent') != notFound) {
+        return phrase.replace("Intermittent", "Sporadic");
+    }
+
+    if (phrase.length > 20) {
+        return phrase.slice(6);
+    }
+
+    return phrase;
+}
+
+const toCelsius = (fahrenheit) => {
+    const celsius = (fahrenheit - 32) * 5 / 9;
+    return celsius.toFixed(0);
+}
+
 const weatherIcons = {
     1: "☀️",
     2: "☀️",
@@ -39,13 +58,9 @@ const weatherIcons = {
     32: "💨"
 }
 
-const toCelsius = (fahrenheit) => {
-    const celsius = (fahrenheit - 32) * 5 / 9;
-    return celsius.toFixed(0);
-}
-
 export const util = {
     daysOfTheWeek,
+    shortenerPhrase,
     toCelsius,
     weatherIcons
 }
