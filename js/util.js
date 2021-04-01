@@ -8,6 +8,12 @@ const daysOfTheWeek = {
     6: "Saturday"
 }
 
+const removeAllChildNodes = (element) => {
+    while (element.firstChild) {
+        element.removeChild(element.firstChild);
+    }
+}
+
 const shortenerPhrase = (phrase) => {
     const notFound = -1;
 
@@ -60,6 +66,7 @@ const weatherIcons = {
 
 export const util = {
     daysOfTheWeek,
+    removeAllChildNodes,
     shortenerPhrase,
     toCelsius,
     weatherIcons

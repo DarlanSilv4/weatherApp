@@ -32,14 +32,14 @@ const setHeader = (city) => {
     country.title = `${city.AdministrativeArea.LocalizedName} - ${city.Country.LocalizedName}`;
 
     const cityInfo = document.getElementById('city-info');
-    removeAllChildNodes(cityInfo);
+    util.removeAllChildNodes(cityInfo);
     cityInfo.appendChild(title);
     cityInfo.appendChild(country);
 }
 
 const setWeather = (weather) => {
     const weatherList = document.getElementById('weather-list');
-    removeAllChildNodes(weatherList);
+    util.removeAllChildNodes(weatherList);
 
     weather.forEach(forecast => {
         const date = new Date(forecast.Date);
@@ -91,8 +91,3 @@ const setWeather = (weather) => {
     );
 }
 
-const removeAllChildNodes = (element) => {
-    while (element.firstChild) {
-        element.removeChild(element.firstChild);
-    }
-}
