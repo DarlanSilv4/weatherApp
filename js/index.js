@@ -4,25 +4,28 @@ import { getWeather } from './controller/getWeather-controller.js';
 import { setHeader } from './components/header.js'
 import { util } from './util.js';
 
-
 const searchBar = document.getElementById('search-city');
 searchBar.addEventListener("keyup", (event) => {
     if (event.key == "Enter") {
         const cityName = searchBar.value;
+        search(cityName);
         searchBar.value = '';
-        getCity(cityName)
-            .then(city => {
-                setHeader(city);
-                return city.Key;
-            })
-            .then(cityKey => {
-                getWeather(cityKey)
-                    .then(weather => {
-                        setWeather(weather);
-                    });
-            });
     }
 });
+
+const search = (cityName) => {
+    getCity(cityName)
+        .then(city => {
+            setHeader(city);
+            return city.Key;
+        })
+        .then(cityKey => {
+            getWeather(cityKey)
+                .then(weather => {
+                    setWeather(weather);
+                });
+        });
+}
 
 const setWeather = (weather) => {
     const weatherList = document.getElementById('weather-list');
@@ -34,3 +37,11 @@ const setWeather = (weather) => {
     );
 }
 
+const load = () => {
+    const cityName = localStorage.getItem('city') || false;
+    if (cityName) {
+        search(cityName);
+    }
+}
+
+load();
