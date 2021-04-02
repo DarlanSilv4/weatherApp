@@ -1,5 +1,6 @@
 import { getCity } from './controller/getCity-controller.js';
 import { getWeather } from './controller/getWeather-controller.js';
+import { setHeader } from './components/header.js'
 import { util } from './util.js';
 
 const searchBar = document.getElementById('search-city');
@@ -20,22 +21,6 @@ searchBar.addEventListener("keyup", (event) => {
             });
     }
 });
-
-const setHeader = (city) => {
-    const title = document.createElement('h1');
-    title.classList.add('city-name');
-    title.innerHTML = city.LocalizedName;
-
-    const country = document.createElement('p');
-    country.classList.add('country-name');
-    country.innerHTML = city.Country.ID;
-    country.title = `${city.AdministrativeArea.LocalizedName} - ${city.Country.LocalizedName}`;
-
-    const cityInfo = document.getElementById('city-info');
-    util.removeAllChildNodes(cityInfo);
-    cityInfo.appendChild(title);
-    cityInfo.appendChild(country);
-}
 
 const setWeather = (weather) => {
     const weatherList = document.getElementById('weather-list');
