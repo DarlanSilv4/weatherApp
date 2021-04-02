@@ -45,8 +45,10 @@ ul {
 body {
   background-color: #2287a9;
   color: #848484;
+  display: grid;
   font-family: "Roboto", sans-serif;
   font-size: 14px;
+  grid-template-rows: 1fr 10fr 1fr;
   height: 100vh;
 }
 
@@ -91,10 +93,10 @@ main {
 */
 
 header {
-  display: flex;
-  width: 100%;
   align-items: flex-start;
+  display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 header .city-name {
@@ -143,11 +145,10 @@ main ul {
   border-radius: 5px;
   box-shadow: 10px 10px 5px #0000003a;
   box-sizing: border-box;
-  height: 100%;
-  margin: 4px 0;
-  padding: 25px;
   flex-basis: auto;
+  margin: 4px 0;
   min-width: 250px;
+  padding: 25px;
   width: 19%;
 }
 
@@ -174,10 +175,10 @@ main ul {
 }
 
 .weather-card .temperature-level {
-  font-size: 2rem;
-  padding: 0 0 10px 10px;
-  font-weight: 300;
   align-self: flex-end;
+  font-size: 2rem;
+  font-weight: 300;
+  padding: 0 0 10px 10px;
 }
 
 .weather-card .current-weather {
@@ -207,7 +208,7 @@ main ul {
 footer {
   color: white;
   font-weight: 100;
+  height: 20px;
   text-align: center;
   width: 100%;
-  height: 20px;
 }
