@@ -130,7 +130,8 @@ main ul {
   justify-content: space-around;
   margin: 20px 0;
   max-width: 1800px;
-  width: 90%;
+  min-width: 300px;
+  width: 95%;
 }
 
 /*
@@ -142,13 +143,12 @@ main ul {
   border-radius: 5px;
   box-shadow: 10px 10px 5px #0000003a;
   box-sizing: border-box;
-  flex-grow: 1;
   height: 100%;
-  margin: 10px;
-  max-width: 295px;
-  min-width: 196px;
+  margin: 4px 0;
   padding: 25px;
-  width: 17%;
+  flex-basis: auto;
+  min-width: 250px;
+  width: 19%;
 }
 
 .weather-card .day {
@@ -190,7 +190,14 @@ main ul {
 .weather-card .weather-icon {
   font-size: 3rem;
   text-align: left;
-  width: 100px;
+  width: auto;
+}
+
+.weather-card .weather-condition {
+  font-size: 95%;
+  height: 60px;
+  width: 70%;
+  word-wrap: break-word;
 }
 
 /*
