@@ -13,18 +13,12 @@ searchBar.addEventListener("keyup", (event) => {
     }
 });
 
-const search = (cityName) => {
-    getCity(cityName)
-        .then(city => {
-            setHeader(city);
-            return city.Key;
-        })
-        .then(cityKey => {
-            getWeather(cityKey)
-                .then(weather => {
-                    setWeather(weather);
-                });
-        });
+const search = async (cityName) => {
+    const city = await getCity(cityName);
+    setHeader(city)
+
+    const weather = await getWeather(city.Key);
+    setWeather(weather);
 }
 
 const setWeather = (weather) => {
