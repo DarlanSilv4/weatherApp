@@ -15,9 +15,17 @@ searchBar.addEventListener("keyup", (event) => {
 
 const search = async (cityName) => {
     const city = await getCity(cityName);
-    setHeader(city)
+    if (city == null) {
+        showErrorMessage();
+        return;
+    }
+    setHeader(city);
 
     const weather = await getWeather(city.Key);
+    if (weather == null) {
+        showErrorMessage();
+        return;
+    }
     setWeather(weather);
 }
 
@@ -29,6 +37,10 @@ const setWeather = (weather) => {
         weatherList.appendChild(card);
     }
     );
+}
+
+const showErrorMessage = () => {
+    alert("😭 Sorry, we could not find the city you are looking for...");
 }
 
 const load = () => {
