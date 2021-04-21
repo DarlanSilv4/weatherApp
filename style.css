@@ -1,0 +1,214 @@
+/*
+* Reset Css
+*/
+
+html,
+body,
+div,
+h1,
+h2,
+p,
+a,
+ul,
+li,
+footer,
+header {
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+footer,
+header {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+
+ul {
+  list-style: none;
+}
+
+/*
+* Global
+*/
+
+body {
+  background-color: #2287a9;
+  color: #848484;
+  display: grid;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  grid-template-rows: 1fr 10fr 1fr;
+  height: 100vh;
+}
+
+/*
+* Search bar
+*/
+
+.search-city {
+  border: none;
+  border-radius: 5px;
+  box-shadow: 5px 10px 5px #0000003a;
+  font-size: 1.1rem;
+  font-style: italic;
+  height: 50px;
+  margin: 5% 25% 0 25%;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 50%;
+}
+
+@media (max-width: 479px) {
+  .search-city {
+    margin: 5% 10% 0 10%;
+    width: 80%;
+  }
+}
+
+/*
+* main
+*/
+
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 0 20px 0;
+}
+
+/*
+* header
+*/
+
+header {
+  align-items: flex-start;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+header .city-name {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 5px 5px 2px #0000003a;
+  text-transform: uppercase;
+}
+
+header .country-name {
+  background-color: #33c674;
+  border-radius: 5px;
+  box-shadow: 5px 5px 2px #0000003a;
+  color: white;
+  font-weight: bold;
+  height: 15px;
+  margin-left: 5px;
+  padding: 2px 0 2px 0;
+  text-align: center;
+  width: 30px;
+}
+
+/*
+* Weather List
+*/
+
+main ul {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  justify-content: space-around;
+  margin: 20px 0;
+  max-width: 1800px;
+  min-width: 300px;
+  width: 95%;
+}
+
+/*
+* Weather Card
+*/
+
+.weather-card {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 10px 10px 5px #0000003a;
+  box-sizing: border-box;
+  flex-basis: auto;
+  margin: 4px 0;
+  min-width: 250px;
+  padding: 25px;
+  width: 19%;
+}
+
+.weather-card .day {
+  font-size: 1.4rem;
+}
+
+.weather-card .temperature {
+  align-items: flex-start;
+  color: #585858;
+  display: flex;
+  margin: 20px 0;
+}
+
+.weather-card .temperature-number {
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.weather-card .temperature-unit {
+  font-size: 2rem;
+  padding-top: 10px;
+}
+
+.weather-card .temperature-level {
+  align-self: flex-end;
+  font-size: 2rem;
+  font-weight: 300;
+  padding: 0 0 10px 10px;
+}
+
+.weather-card .current-weather {
+  display: flex;
+  font-size: 1.8rem;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+.weather-card .weather-icon {
+  font-size: 3rem;
+  text-align: left;
+  width: auto;
+}
+
+.weather-card .weather-condition {
+  font-size: 95%;
+  height: 60px;
+  width: 70%;
+  word-wrap: break-word;
+}
+
+/*
+* Footer
+*/
+
+footer {
+  color: white;
+  font-weight: 100;
+  height: 20px;
+  text-align: center;
+  width: 100%;
+}
