@@ -15,6 +15,8 @@ searchBar.addEventListener("keyup", (event) => {
 
 const search = async (cityName) => {
     const city = await apiService.getCity(cityName);
+    localStorage.setItem('city', city.LocalizedName); //save city name in localStorage
+
     if (city == null) {
         showErrorMessage();
         return;
