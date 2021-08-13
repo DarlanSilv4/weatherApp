@@ -1,5 +1,5 @@
 import { createWeatherCard } from './components/weather-card.js';
-import { getCity } from './controller/getCity-controller.js';
+import { apiService } from './service/api-service.js';
 import { getWeather } from './controller/getWeather-controller.js';
 import { setHeader } from './components/header.js'
 import { util } from './util.js';
@@ -14,7 +14,7 @@ searchBar.addEventListener("keyup", (event) => {
 });
 
 const search = async (cityName) => {
-    const city = await getCity(cityName);
+    const city = await apiService.getCity(cityName);
     if (city == null) {
         showErrorMessage();
         return;

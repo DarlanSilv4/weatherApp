@@ -10,7 +10,17 @@ const getWeather = async (cityKey) => {
     return response.json();
 }
 
+const getCity = async (cityName) => {
+    try {
+        const city = await searchCity(cityName);
+        return city[0];
+    }
+    catch {
+        return null;
+    }
+}
+
 export const apiService = {
-    searchCity,
-    getWeather
+    getWeather,
+    getCity
 }
