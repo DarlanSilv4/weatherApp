@@ -1,6 +1,5 @@
 import { createWeatherCard } from './components/weather-card.js';
 import { apiService } from './service/api-service.js';
-import { getWeather } from './controller/getWeather-controller.js';
 import { setHeader } from './components/header.js'
 import { util } from './util.js';
 
@@ -23,7 +22,7 @@ const search = async (cityName) => {
     }
     setHeader(city);
 
-    const weather = await getWeather(city.Key);
+    const weather = await apiService.getDailyForecast(city.Key);
     if (weather == null) {
         showErrorMessage();
         return;
