@@ -20,7 +20,17 @@ const getCity = async (cityName) => {
     }
 }
 
+const getDailyForecast = async (cityKey) => {
+    try {
+        const weather = await getWeather(cityKey);
+        return weather.DailyForecasts;
+    }
+    catch {
+        return null;
+    }
+}
+
 export const apiService = {
-    getWeather,
+    getDailyForecast,
     getCity
 }
