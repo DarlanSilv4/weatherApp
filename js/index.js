@@ -1,4 +1,4 @@
-import { createWeatherCard } from './components/weather-card.js';
+import { createForecastCard } from './components/forecast-card.js';
 import { apiService } from './service/api-service.js';
 import { setHeader } from './components/header.js'
 import { util } from './util.js';
@@ -22,20 +22,20 @@ const search = async (cityName) => {
     }
     setHeader(city);
 
-    const weather = await apiService.getDailyForecast(city.Key);
-    if (weather == null) {
+    const forecast = await apiService.getDailyForecast(city.Key);
+    if (forecast == null) {
         showErrorMessage();
         return;
     }
-    setWeather(weather);
+    setForecast(forecast);
 }
 
-const setWeather = (weather) => {
-    const weatherList = document.getElementById('weather-list');
-    util.removeAllChildNodes(weatherList);
-    weather.forEach(forecast => {
-        const card = createWeatherCard(forecast);
-        weatherList.appendChild(card);
+const setForecast = (forecast) => {
+    const forecastList = document.getElementById('forecast-list');
+    util.removeAllChildNodes(forecastList);
+    forecast.forEach(forecast => {
+        const card = createForecastCard(forecast);
+        forecastList.appendChild(card);
     }
     );
 }

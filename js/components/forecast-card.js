@@ -1,6 +1,6 @@
 import { util } from '../util.js';
 
-export const createWeatherCard = (forecast) => {
+export const createForecastCard = (forecast) => {
     const date = new Date(forecast.Date);
     const dayCode = date.getDay();
     const dayName = util.daysOfTheWeek[dayCode];
@@ -33,17 +33,17 @@ export const createWeatherCard = (forecast) => {
     const phrase = forecast.Day.IconPhrase;
     const shortPhrase = util.shortenerPhrase(phrase);
 
-    const currentWeather = document.createElement('div');
-    currentWeather.classList.add('current-weather');
-    currentWeather.innerHTML = `<div class="weather-icon">${icon}</div>
-                                <div class="weather-condition">${shortPhrase}</div>`;
+    const currentForecast = document.createElement('div');
+    currentForecast.classList.add('current-forecast');
+    currentForecast.innerHTML = `<div class="forecast-icon">${icon}</div>
+                                <div class="forecast-condition">${shortPhrase}</div>`;
 
     const card = document.createElement('li');
-    card.classList.add('weather-card');
+    card.classList.add('forecast-card');
     card.appendChild(day);
     card.appendChild(minTemperature);
     card.appendChild(maxTemperature);
-    card.appendChild(currentWeather);
+    card.appendChild(currentForecast);
 
     return card;
 }

@@ -121,7 +121,7 @@ header .country-name {
 }
 
 /*
-* Weather List
+* Forecast List
 */
 
 main ul {
@@ -137,10 +137,10 @@ main ul {
 }
 
 /*
-* Weather Card
+* Forecast Card
 */
 
-.weather-card {
+.forecast-card {
   background-color: white;
   border-radius: 5px;
   box-shadow: 10px 10px 5px #0000003a;
@@ -152,49 +152,49 @@ main ul {
   width: 19%;
 }
 
-.weather-card .day {
+.forecast-card .day {
   font-size: 1.4rem;
 }
 
-.weather-card .temperature {
+.forecast-card .temperature {
   align-items: flex-start;
   color: #585858;
   display: flex;
   margin: 20px 0;
 }
 
-.weather-card .temperature-number {
+.forecast-card .temperature-number {
   font-size: 4rem;
   font-weight: bold;
   text-align: center;
 }
 
-.weather-card .temperature-unit {
+.forecast-card .temperature-unit {
   font-size: 2rem;
   padding-top: 10px;
 }
 
-.weather-card .temperature-level {
+.forecast-card .temperature-level {
   align-self: flex-end;
   font-size: 2rem;
   font-weight: 300;
   padding: 0 0 10px 10px;
 }
 
-.weather-card .current-weather {
+.forecast-card .current-forecast {
   display: flex;
   font-size: 1.8rem;
   font-weight: 100;
   text-transform: uppercase;
 }
 
-.weather-card .weather-icon {
+.forecast-card .forecast-icon {
   font-size: 3rem;
   text-align: left;
   width: auto;
 }
 
-.weather-card .weather-condition {
+.forecast-card .forecast-condition {
   font-size: 95%;
   height: 60px;
   width: 70%;
