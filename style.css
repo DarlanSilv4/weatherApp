@@ -190,6 +190,25 @@ header .country-name {
 * Forecast List
 */
 
+.forecast-title {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 5px 5px 2px #0000003a;
+  text-transform: uppercase;
+  margin-top: 20px;
+  max-width: 1800px;
+  min-width: 300px;
+  width: 95%;
+}
+
+@media (max-width: 526px) {
+  .forecast-title {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
 main ul {
   align-items: center;
   display: flex;
