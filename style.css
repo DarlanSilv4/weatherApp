@@ -121,6 +121,72 @@ header .country-name {
 }
 
 /*
+* Weather Card
+*/
+
+.weather-card {
+  justify-content: center;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 10px 10px 5px #0000003a;
+  box-sizing: border-box;
+  display: flex;
+  gap: 5px;
+  flex-basis: auto;
+  margin: 20px 0 5px 0;
+  padding: 15px;
+  width: 30%;
+  min-width: 288px;
+  max-width: 406px;
+}
+
+.weather-card .weather-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.weather-card .info-weather {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.weather-card .info-hour {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.weather-card .info-icon {
+  font-size: 4rem;
+  width: 100%;
+  text-align: center;
+  margin: 10px 0 10px 0;
+}
+
+.weather-card .info-condition {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.weather-card .weather-temperature {
+  display: flex;
+  align-items: center;
+  color: #585858;
+}
+
+.weather-card .temperature-number {
+  font-size: 5rem;
+  font-weight: bold;
+}
+
+.weather-card .temperature-unit {
+  font-size: 2rem;
+  padding-bottom: 20px;
+}
+
+/*
 * Forecast List
 */
 
