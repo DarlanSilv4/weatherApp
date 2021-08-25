@@ -33,10 +33,14 @@ export const createForecastCard = (forecast) => {
     const phrase = forecast.Day.IconPhrase;
     const shortPhrase = util.shortenerPhrase(phrase);
 
+    const forecastIcon = document.createElement('img');
+    forecastIcon.classList.add('forecast-icon');
+    forecastIcon.src = icon;
+
     const currentForecast = document.createElement('div');
     currentForecast.classList.add('current-forecast');
-    currentForecast.innerHTML = `<div class="forecast-icon">${icon}</div>
-                                <div class="forecast-condition">${shortPhrase}</div>`;
+    currentForecast.appendChild(forecastIcon);
+    currentForecast.innerHTML += `<div class="forecast-condition">${shortPhrase}</div>`;
 
     const card = document.createElement('li');
     card.classList.add('forecast-card');

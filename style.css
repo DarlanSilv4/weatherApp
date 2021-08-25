@@ -157,8 +157,7 @@ header .country-name {
 }
 
 .weather-card .info-icon {
-  font-size: 4rem;
-  width: 100%;
+  width: 6rem;
   text-align: center;
   margin: 10px 0 10px 0;
 }
@@ -274,9 +273,8 @@ main ul {
 }
 
 .forecast-card .forecast-icon {
-  font-size: 3rem;
   text-align: left;
-  width: auto;
+  width: 4rem;
 }
 
 .forecast-card .forecast-condition {
