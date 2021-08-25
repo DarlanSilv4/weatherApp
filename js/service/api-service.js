@@ -10,6 +10,18 @@ const getForecast = async (cityKey) => {
     return response.json();
 }
 
+const getCurrentWeather = async (cityKey) => {
+    try {
+        const response = await fetch(`http://dataservice.accuweather.com/currentconditions/v1/${cityKey}?apikey=${API_KEY}`);
+        return response.json();
+    }
+    catch {
+        return null;
+    }
+
+}
+
+
 const getCity = async (cityName) => {
     try {
         const city = await searchCity(cityName);
@@ -31,6 +43,7 @@ const getDailyForecast = async (cityKey) => {
 }
 
 export const apiService = {
+    getCurrentWeather,
     getDailyForecast,
     getCity
 }
