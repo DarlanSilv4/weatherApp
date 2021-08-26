@@ -28,6 +28,8 @@ const setupPage = async (city) => {
     if (weather === null) return showErrorMessage();
     setWeather(weather[0]);
 
+    showForecastTitle();
+
     const forecast = await apiService.getDailyForecast(city.Key);
     if (forecast === null) return showErrorMessage();
     setForecast(forecast);
@@ -35,6 +37,11 @@ const setupPage = async (city) => {
 
 const saveLastCityNameInLocalStorage = cityName => {
     return localStorage.setItem('city', cityName);
+}
+
+const showForecastTitle = () => {
+    const title = document.getElementById('forecast-title');
+    title.classList.remove('title-hidden')
 }
 
 const setWeather = (weather) => {

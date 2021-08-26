@@ -208,6 +208,10 @@ header .country-name {
   }
 }
 
+.title-hidden {
+  display: none;
+}
+
 main ul {
   align-items: center;
   display: flex;
