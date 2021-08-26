@@ -10,7 +10,7 @@ export const createWeatherCard = (weather) => {
 
   const hours = document.createElement('p');
   hours.classList.add('info-hour');
-  hours.innerHTML = `${date.getHours()} : ${date.getMinutes()}`;
+  hours.innerHTML = `Last update ${date.getHours()}:${date.getMinutes()}`;
 
   const iconKey = weather.WeatherIcon;
   const iconUrl = util.weatherIcons[iconKey];
