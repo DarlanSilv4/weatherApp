@@ -295,3 +295,7 @@ footer {
   text-align: center;
   width: 100%;
 }
+
+footer a {
+  font-weight: normal;
+}
