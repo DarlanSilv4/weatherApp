@@ -2,7 +2,7 @@
   
 # <h1 align="center">WEATHER</h1>
 
-<h4  align="center">A simple web application that shows weather forecast for today and for the next 4 days.</h4 >
+<h4  align="center">A simple web application that shows the current weather and forecast for today and for the next 4 days.</h4 >
 
 <p align="center">
  
@@ -21,7 +21,7 @@
   <img alt="GitHub" src="https://img.shields.io/github/license/DarlanSilv4/weatherApp">
 </p>
 
-![HOMEPAGE_GIF](https://user-images.githubusercontent.com/77397497/115628412-fc07c200-a2d6-11eb-9590-6b0f0d876913.gif)
+![HOMEPAGE_GIF](https://user-images.githubusercontent.com/77397497/131147856-7f00174a-61b7-463e-b49b-a2f2a5fc265e.png)
 
 ## :toolbox: Dependencies
 
