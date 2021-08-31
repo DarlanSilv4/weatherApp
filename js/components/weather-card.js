@@ -1,49 +1,64 @@
-import { util } from '../util.js';
+import { util } from "../util.js"
 
-export const createWeatherCard = (forecast) => {
-    const date = new Date(forecast.Date);
-    const dayCode = date.getDay();
-    const dayName = util.daysOfTheWeek[dayCode];
+export const createWeatherCard = (weather) => {
+  const title = document.createElement('p');
+  title.classList.add('info-weather');
+  title.innerHTML = "Current Weather";
 
-    const day = document.createElement('h2');
-    day.classList.add('day');
-    day.innerHTML = dayName;
+  const epochTime = weather.EpochTime;
+  const date = convertEpochTimeToHumanDate(epochTime);
 
-    const temperature = forecast.Temperature;
-    const minValue = temperature.Minimum.Value;
-    const minValueCelsius = util.toCelsius(minValue);
+  const hours = document.createElement('p');
+  hours.classList.add('info-hour');
+  hours.innerHTML = `Last update ${date.getHours()}:${date.getMinutes()}`;
 
-    const minTemperature = document.createElement('div');
-    minTemperature.classList.add('temperature');
-    minTemperature.innerHTML = `<p class="temperature-number">${minValueCelsius}</p>
-                            <p class="temperature-unit">ºC</p>
-                            <p class="temperature-level">Min</p>`
+  const iconKey = weather.WeatherIcon;
+  const iconUrl = util.weatherIcons[iconKey];
 
-    const maxValue = temperature.Maximum.Value;
-    const maxValueCelsius = util.toCelsius(maxValue);
+  const icon = document.createElement('img');
+  icon.classList.add('info-icon');
+  icon.src = iconUrl;
 
-    const maxTemperature = document.createElement('div');
-    maxTemperature.classList.add('temperature');
-    maxTemperature.innerHTML = `<p class="temperature-number">${maxValueCelsius}</p>
-                            <p class="temperature-unit">ºC</p>
-                            <p class="temperature-level">Max</p>`
+  const phrase = weather.WeatherText;
+  const shortedPhrase = util.shortenerPhrase(phrase);
 
-    const iconKey = forecast.Day.Icon;
-    const icon = util.weatherIcons[iconKey];
-    const phrase = forecast.Day.IconPhrase;
-    const shortPhrase = util.shortenerPhrase(phrase);
+  const condition = document.createElement('p');
+  condition.classList.add('info-condition');
+  condition.innerHTML = shortedPhrase;
 
-    const currentWeather = document.createElement('div');
-    currentWeather.classList.add('current-weather');
-    currentWeather.innerHTML = `<div class="weather-icon">${icon}</div>
-                                <div class="weather-condition">${shortPhrase}</div>`;
+  const weatherInfo = document.createElement('div');
+  weatherInfo.classList.add('weather-info');
+  weatherInfo.appendChild(title);
+  weatherInfo.appendChild(hours);
+  weatherInfo.appendChild(icon);
+  weatherInfo.appendChild(condition);
 
-    const card = document.createElement('li');
-    card.classList.add('weather-card');
-    card.appendChild(day);
-    card.appendChild(minTemperature);
-    card.appendChild(maxTemperature);
-    card.appendChild(currentWeather);
+  const temperatureValue = weather.Temperature.Metric.Value.toFixed(0); //return only two digits without floating point  
 
-    return card;
+  const temperature = document.createElement('p');
+  temperature.classList.add('temperature-number');
+  temperature.innerHTML = temperatureValue;
+
+  const temperatureUnit = document.createElement('p');
+  temperatureUnit.classList.add('temperature-unit');
+  temperatureUnit.innerHTML = 'ºC'
+
+  const weatherTemperature = document.createElement('div');
+  weatherTemperature.classList.add('weather-temperature');
+  weatherTemperature.appendChild(temperature);
+  weatherTemperature.appendChild(temperatureUnit);
+
+  const weatherCard = document.createElement('section');
+  weatherCard.classList.add('weather-card');
+  weatherCard.setAttribute('id', "weather-card");
+  weatherCard.appendChild(weatherInfo);
+  weatherCard.appendChild(weatherTemperature);
+
+  return weatherCard;
+}
+
+const convertEpochTimeToHumanDate = (epochTime) => {
+  const humanDate = new Date(0); //January 1, 1970
+  humanDate.setUTCSeconds(epochTime);
+  return humanDate;
 }
